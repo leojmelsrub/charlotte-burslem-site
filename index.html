@@ -6,8 +6,8 @@
 <!-- Google Analytics 4 (analytics only; ad features off). -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H0NZ7PQHQB"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H0NZ7PQHQB',{anonymize_ip:true,allow_google_signals:false,allow_ad_personalization_signals:false});</script>
-<title>Portland Bagpiper for Hire | Weddings & Events | Charlotte Burslem</title>
-<meta name="description" content="Hire Charlotte Burslem, a competitive young Portland bagpiper, for weddings, parties & events. Live Great Highland pipes across the metro. Hear her play & get a quote.">
+<title>Portland Bagpiper for Hire | Charlotte Burslem</title>
+<meta name="description" content="Hire Charlotte Burslem, a competitive Portland bagpiper, for weddings, parties and events. Live Great Highland pipes across the metro. Hear her play, get a quote.">
 <link rel="canonical" href="https://charlotteburslem.com/">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#F7F4EF">
@@ -33,15 +33,15 @@
 <link rel="manifest" href="/site.webmanifest">
 
 <!--
-  FONTS — PRD Section 13 requires SELF-HOSTED WOFF2 (Fraunces + Hanken Grotesk) with
-  preload of the LCP display font and a metrics-matched fallback to avoid CLS.
-  Google Fonts is used here so the file previews/deploys immediately. Before launch,
-  download the OFL WOFF2 files, self-host them, and swap these two links for @font-face
-  with font-display:swap + <link rel="preload"> on the hero display weight.
+  FONTS — loaded async (media=print swap) so the stylesheet is non-render-blocking.
+  display=swap + a system-ui fallback covers the brief FOUT. Deeper win still open:
+  self-host the OFL WOFF2 files and preload the hero display weight to drop the
+  third-party request entirely (see assets/fonts/). CSP currently allows Google Fonts.
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,560&family=Hanken+Grotesk:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,560&family=Hanken+Grotesk:wght@400;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,560&family=Hanken+Grotesk:wght@400;600&display=swap"></noscript>
 
 <!-- Cloudflare Turnstile (spam check). Remove this line and the .cf-turnstile div to disable. -->
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

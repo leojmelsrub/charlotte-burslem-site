@@ -1,0 +1,3 @@
+# Consolidate to the apex host so only one hostname is indexed.
+# The ! forces the redirect even if a matching static asset exists.
+https://www.charlotteburslem.com/* https://charlotteburslem.com/:splat 301!
