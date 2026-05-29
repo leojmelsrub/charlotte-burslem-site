@@ -39,6 +39,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,560&family=Hanken+Grotesk:wght@400;600&display=swap">
 
+<!-- Cloudflare Turnstile (spam check). Remove this line and the .cf-turnstile div to disable. -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <style>
 :root{
   --paper:#F7F4EF;
@@ -119,18 +122,21 @@ section{padding-block:clamp(3rem,7vw,6rem)}
 @media (min-width:1024px){.hero{min-height:88vh}}
 .hero-media,.hero-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero-poster{z-index:0}.hero-media{z-index:1}
-.hero .wrap{position:relative;z-index:3;padding-block:clamp(2.5rem,6vw,5rem)}
+/* Pin the hero text to the left edge so the photo subject stays clear on the right. */
+.hero .wrap{position:relative;z-index:3;max-width:none;margin:0;
+  padding-block:clamp(2.5rem,6vw,5rem)}
+.hero-inner{margin-right:auto}
 /* Text sits on a frosted paper panel — keeps the photo bright, no full-image scrim. */
-.hero-inner{max-width:36rem;background:rgba(247,244,239,.80);
+.hero-inner{max-width:48rem;background:rgba(247,244,239,.80);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
   border:1px solid rgba(255,255,255,.45);border-radius:16px;
-  padding:clamp(1.25rem,2.4vw,1.75rem);box-shadow:0 18px 50px rgba(20,18,17,.20)}
-.hero .eyebrow{color:var(--accent-ink);margin-bottom:.35rem}
-.hero h1{color:var(--ink);font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.04;margin-bottom:.3em}
-.hero .subhead{font-size:clamp(1rem,1.4vw,1.2rem);max-width:30em;margin-bottom:1.15rem;color:#3a3733}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1.1rem}
+  padding:clamp(1.1rem,2vw,1.5rem) clamp(1.25rem,2.4vw,1.9rem);box-shadow:0 18px 50px rgba(20,18,17,.20)}
+.hero .eyebrow{color:var(--accent-ink);margin-bottom:.3rem}
+.hero h1{color:var(--ink);font-size:clamp(1.75rem,3.6vw,2.7rem);line-height:1.04;margin-bottom:.25em}
+.hero .subhead{font-size:clamp(1rem,1.4vw,1.2rem);max-width:38em;margin-bottom:.9rem;color:#3a3733}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:.9rem}
 .trust-strip{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);
-  padding-top:.85rem;max-width:40em}
+  padding-top:.7rem;max-width:46em}
 
 /* generic section intro */
 .section-head{max-width:40rem;margin-bottom:2.5rem}
@@ -549,12 +555,11 @@ body{padding-bottom:0}
         <p class="lead">Tell us a little about your event and we'll come back with availability and a quote, usually within 24 hours.</p>
       </div>
       <!--
-        FORM PIPELINE — static pages can't send mail. Before launch, point action= at a
-        Cloudflare Pages Function (Resend/Postmark) or a form service (Formspree/Basin),
-        and add the Cloudflare Turnstile widget (Section 18). The JS below shows the
-        success state client-side; the honeypot is a first-line spam filter.
+        Posts to the /api/book Pages Function (functions/api/book.js), which emails via Resend.
+        Turnstile: replace data-sitekey below with your real key, or remove the widget to skip
+        the spam check (the function only enforces Turnstile when TURNSTILE_SECRET is set).
       -->
-      <form class="form-grid reveal" id="bookForm" action="#" method="post" novalidate>
+      <form class="form-grid reveal" id="bookForm" action="/api/book" method="post" novalidate>
         <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
         <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
@@ -569,7 +574,7 @@ body{padding-bottom:0}
         <div class="field"><label for="loc">Location / venue</label><input id="loc" name="location" type="text"></div>
         <div class="field field--full"><label for="msg">Anything else we should know?</label><textarea id="msg" name="message"></textarea></div>
         <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
-        <!-- <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITEKEY"></div> -->
+        <div class="cf-turnstile field--full" data-sitekey="YOUR_TURNSTILE_SITEKEY"></div>
         <div class="field--full">
           <button class="btn btn-primary" type="submit">Send Request</button>
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
@@ -737,25 +742,41 @@ body{padding-bottom:0}
   });
 })();
 
-// Form handling (client-side success state; replace with real pipeline before launch).
+// Form handling — POST to /api/book (Pages Function), with graceful messaging.
 (function(){
   var form = document.getElementById('bookForm');
   var status = document.getElementById('formStatus');
   if (!form) return;
+  var btn = form.querySelector('button[type="submit"]');
   form.addEventListener('submit', function(e){
     e.preventDefault();
     status.classList.remove('err');
-    // honeypot
-    if (form.querySelector('#company').value){ return; }
+    if (form.querySelector('#company').value){ return; } // honeypot
     if (!form.checkValidity()){
       status.textContent = 'Please check the highlighted fields and try again — or just call or text (971) 228-5704.';
       status.classList.add('err');
       form.reportValidity();
       return;
     }
-    // TODO: POST to Cloudflare Pages Function / Formspree here.
-    status.textContent = "Thanks — we've got your request and will be in touch within 24 hours. For anything urgent, call or text (971) 228-5704.";
-    form.reset();
+    if (btn){ btn.disabled = true; }
+    status.textContent = 'Sending…';
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'accept': 'application/json' },
+      body: new FormData(form)
+    }).then(function(r){ return r.json().catch(function(){ return {ok:r.ok}; }); })
+      .then(function(res){
+        if (res && res.ok){
+          status.textContent = "Thanks — we've got your request and will be in touch within 24 hours. For anything urgent, call or text (971) 228-5704.";
+          form.reset();
+        } else {
+          status.textContent = (res && res.error ? res.error + ' ' : '') + 'You can also call or text (971) 228-5704.';
+          status.classList.add('err');
+        }
+      }).catch(function(){
+        status.textContent = "Something went wrong sending the form. Please call or text (971) 228-5704.";
+        status.classList.add('err');
+      }).finally(function(){ if (btn){ btn.disabled = false; } if (window.turnstile){ try{ window.turnstile.reset(); }catch(e){} } });
   });
 })();
 </script>

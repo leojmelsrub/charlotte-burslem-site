@@ -15,6 +15,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,560&family=Hanken+Grotesk:wght@400;600&display=swap">
 
+<!-- Cloudflare Turnstile (spam check). Remove this line and the .cf-turnstile div to disable. -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <style>
 :root{--paper:#F7F4EF;--ink:#1C1A19;--accent:#7A2E36;--accent-hover:#5E2129;--accent-ink:#6A2630;
   --muted:#6F6A5E;--line:#D8D2C7;--display:"Fraunces",Georgia,serif;--body:"Hanken Grotesk",system-ui,sans-serif}
@@ -52,7 +55,7 @@ textarea{min-height:120px;resize:vertical}
   <h1>Request a quote</h1>
   <p class="lead">Tell us a little about your event and we'll come back with availability and a quote, usually within 24 hours.</p>
 
-  <form class="form-grid" id="bookForm" action="#" method="post" novalidate>
+  <form class="form-grid" id="bookForm" action="/api/book" method="post" novalidate>
     <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
     <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
     <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
@@ -67,7 +70,7 @@ textarea{min-height:120px;resize:vertical}
     <div class="field"><label for="loc">Location / venue</label><input id="loc" name="location" type="text"></div>
     <div class="field field--full"><label for="msg">Anything else we should know?</label><textarea id="msg" name="message"></textarea></div>
     <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
-    <!-- <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITEKEY"></div> -->
+    <div class="cf-turnstile field--full" data-sitekey="YOUR_TURNSTILE_SITEKEY"></div>
     <div class="field--full">
       <button class="btn btn-primary" type="submit">Send Request</button>
       <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
@@ -86,6 +89,7 @@ textarea{min-height:120px;resize:vertical}
 (function(){
   var form=document.getElementById('bookForm'),status=document.getElementById('formStatus');
   if(!form)return;
+  var btn=form.querySelector('button[type="submit"]');
   form.addEventListener('submit',function(e){
     e.preventDefault();status.classList.remove('err');
     if(form.querySelector('#company').value)return;
@@ -93,9 +97,22 @@ textarea{min-height:120px;resize:vertical}
       status.textContent='Please check the highlighted fields and try again — or just call or text (971) 228-5704.';
       status.classList.add('err');form.reportValidity();return;
     }
-    // TODO: POST to Cloudflare Pages Function / Formspree before launch.
-    status.textContent="Thanks — we've got your request and will be in touch within 24 hours. For anything urgent, call or text (971) 228-5704.";
-    form.reset();
+    if(btn){btn.disabled=true;}
+    status.textContent='Sending…';
+    fetch(form.action,{method:'POST',headers:{'accept':'application/json'},body:new FormData(form)})
+      .then(function(r){return r.json().catch(function(){return {ok:r.ok};});})
+      .then(function(res){
+        if(res&&res.ok){
+          status.textContent="Thanks — we've got your request and will be in touch within 24 hours. For anything urgent, call or text (971) 228-5704.";
+          form.reset();
+        }else{
+          status.textContent=(res&&res.error?res.error+' ':'')+'You can also call or text (971) 228-5704.';
+          status.classList.add('err');
+        }
+      }).catch(function(){
+        status.textContent="Something went wrong sending the form. Please call or text (971) 228-5704.";
+        status.classList.add('err');
+      }).finally(function(){if(btn){btn.disabled=false;}if(window.turnstile){try{window.turnstile.reset();}catch(e){}}});
   });
 })();
 </script>
