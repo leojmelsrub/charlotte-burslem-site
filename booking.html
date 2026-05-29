@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a Quote | Charlotte Burslem — Portland Bagpiper</title>
+<meta name="description" content="Request a quote to book Charlotte Burslem, Portland bagpiper, for your wedding, celebration or event. We respond within 24 hours.">
+<!-- noindex,follow — conversion/utility page, not a ranking target (PRD Section 4) -->
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://charlotteburslem.com/booking">
+<meta name="theme-color" content="#F7F4EF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,560&family=Hanken+Grotesk:wght@400;600&display=swap">
+
+<style>
+:root{--paper:#F7F4EF;--ink:#1C1A19;--accent:#7A2E36;--accent-hover:#5E2129;--accent-ink:#6A2630;
+  --muted:#6F6A5E;--line:#D8D2C7;--display:"Fraunces",Georgia,serif;--body:"Hanken Grotesk",system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;
+  font-size:1.05rem;-webkit-font-smoothing:antialiased}
+h1{font-family:var(--display);font-weight:560;font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0 0 .4em}
+a{color:var(--accent-ink);text-underline-offset:2px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:8px;top:8px;background:var(--ink);color:#fff;padding:.75rem 1rem;z-index:10}
+.wrap{max-width:780px;margin:0 auto;padding:clamp(2rem,6vw,5rem) clamp(1rem,5vw,2rem)}
+.brand{font-family:var(--display);font-weight:560;font-size:1.15rem;color:var(--ink);text-decoration:none;display:inline-block;margin-bottom:2rem}
+.lead{font-size:1.2rem;max-width:34em}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--body);font-weight:600;
+  min-height:44px;padding:.85rem 1.4rem;border-radius:8px;border:2px solid transparent;text-decoration:none;cursor:pointer}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hover)}
+.form-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.5rem}
+@media(min-width:620px){.form-grid{grid-template-columns:1fr 1fr}}
+.field{display:flex;flex-direction:column;gap:.35rem}.field--full{grid-column:1/-1}
+label{font-weight:600;font-size:.95rem}
+input,select,textarea{font-family:var(--body);font-size:1rem;padding:.7rem .8rem;border:1.5px solid var(--line);
+  border-radius:8px;background:#fff;color:var(--ink);min-height:44px}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:3px solid rgba(122,46,54,.25)}
+textarea{min-height:120px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-status{margin-top:1rem;font-weight:600}.form-status.err{color:var(--accent-ink)}
+.funeral{margin-top:2rem;padding:1.25rem 1.5rem;background:#fff;border:1px solid var(--line);border-radius:12px}
+.note{color:var(--muted);font-size:.95rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap" id="main">
+  <a class="brand" href="/">Charlotte Burslem</a>
+  <h1>Request a quote</h1>
+  <p class="lead">Tell us a little about your event and we'll come back with availability and a quote, usually within 24 hours.</p>
+
+  <form class="form-grid" id="bookForm" action="#" method="post" novalidate>
+    <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+    <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+    <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+    <div class="field"><label for="etype">Event type</label>
+      <select id="etype" name="event_type" required>
+        <option value="" selected disabled>Choose one</option>
+        <option>Wedding</option><option>Party</option><option>Graduation</option>
+        <option>Retirement</option><option>Corporate</option><option>Funeral</option><option>Other</option>
+      </select>
+    </div>
+    <div class="field"><label for="edate">Event date</label><input id="edate" name="event_date" type="date"></div>
+    <div class="field"><label for="loc">Location / venue</label><input id="loc" name="location" type="text"></div>
+    <div class="field field--full"><label for="msg">Anything else we should know?</label><textarea id="msg" name="message"></textarea></div>
+    <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
+    <!-- <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITEKEY"></div> -->
+    <div class="field--full">
+      <button class="btn btn-primary" type="submit">Send Request</button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+
+  <div class="funeral">
+    <p style="margin:0"><strong>Arranging a funeral?</strong> <a href="tel:+19712285704">Call or text (971) 228-5704</a> — we respond quickly and will take care of it. No form required to reach a person.</p>
+  </div>
+
+  <p class="note" style="margin-top:1.5rem">Bookings are managed by Charlotte's parent/guardian. We respond to every request within 24 hours.</p>
+  <p class="note" style="margin-top:.5rem"><a href="/terms">Booking Terms</a> · <a href="/privacy">Privacy Policy</a> · <a href="/">Home</a></p>
+</div>
+
+<script>
+(function(){
+  var form=document.getElementById('bookForm'),status=document.getElementById('formStatus');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();status.classList.remove('err');
+    if(form.querySelector('#company').value)return;
+    if(!form.checkValidity()){
+      status.textContent='Please check the highlighted fields and try again — or just call or text (971) 228-5704.';
+      status.classList.add('err');form.reportValidity();return;
+    }
+    // TODO: POST to Cloudflare Pages Function / Formspree before launch.
+    status.textContent="Thanks — we've got your request and will be in touch within 24 hours. For anything urgent, call or text (971) 228-5704.";
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>

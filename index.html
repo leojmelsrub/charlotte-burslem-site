@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portland Bagpiper for Hire | Weddings & Events | Charlotte Burslem</title>
+<meta name="description" content="Hire Charlotte Burslem, a competitive young Portland bagpiper, for weddings, parties & events. Live Great Highland pipes across the metro. Hear her play & get a quote.">
+<link rel="canonical" href="https://charlotteburslem.com/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F7F4EF">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Charlotte Burslem — Portland Bagpiper">
+<meta property="og:title" content="Charlotte Burslem — Portland Bagpiper for Hire">
+<meta property="og:description" content="Live Great Highland bagpipes for weddings, celebrations and events across Portland. Hear her play and request a quote.">
+<meta property="og:url" content="https://charlotteburslem.com/">
+<meta property="og:image" content="https://charlotteburslem.com/assets/og-charlotte-burslem.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Charlotte Burslem — Portland Bagpiper for Hire">
+<meta name="twitter:description" content="Live Great Highland bagpipes for weddings, celebrations and events across Portland. Hear her play and request a quote.">
+<meta name="twitter:image" content="https://charlotteburslem.com/assets/og-charlotte-burslem.jpg">
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!--
+  FONTS — PRD Section 13 requires SELF-HOSTED WOFF2 (Fraunces + Hanken Grotesk) with
+  preload of the LCP display font and a metrics-matched fallback to avoid CLS.
+  Google Fonts is used here so the file previews/deploys immediately. Before launch,
+  download the OFL WOFF2 files, self-host them, and swap these two links for @font-face
+  with font-display:swap + <link rel="preload"> on the hero display weight.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,560&family=Hanken+Grotesk:wght@400;600&display=swap">
+
+<style>
+:root{
+  --paper:#F7F4EF;
+  --ink:#1C1A19;
+  --accent:#7A2E36;        /* weathered Fraser red — large headings, buttons, rules */
+  --accent-hover:#5E2129;
+  --accent-ink:#6A2630;    /* small accent text + body links (AA on paper) */
+  --muted:#6F6A5E;         /* darkened from #8A8577 to clear AA at small sizes */
+  --line:#D8D2C7;          /* hairline borders (>=3:1 non-text contrast vs paper) */
+  --card:#FFFFFF;
+  --maxw:1200px;
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Hanken Grotesk", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-weight:400;line-height:1.6;
+  font-size:clamp(1rem,0.96rem + 0.2vw,1.125rem);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+h1,h2,h3{font-family:var(--display);font-weight:560;color:var(--ink);margin:0 0 .5em;line-height:1.1}
+h2{font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.15}
+h3{font-size:clamp(1.25rem,2vw,1.5rem);line-height:1.2;font-weight:560}
+p{margin:0 0 1rem}
+a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:var(--accent-hover)}
+img{max-width:100%;height:auto;display:block}
+
+/* visible focus on a hover-driven design — WCAG 2.4.7/2.4.11 */
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;
+  padding:.75rem 1rem;z-index:1000;text-decoration:none}
+.skip:focus{left:8px;top:8px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:clamp(1rem,5vw,4rem)}
+section{padding-block:clamp(3rem,7vw,6rem)}
+.eyebrow{font-weight:600;text-transform:uppercase;letter-spacing:.08em;
+  font-size:.8125rem;color:var(--accent-ink);margin:0 0 .75rem}
+.lead{font-size:1.25rem;line-height:1.5;max-width:34em}
+.measure{max-width:36em}
+.tagline{font-size:.875rem;color:var(--muted)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--body);font-weight:600;font-size:1rem;line-height:1;
+  min-height:44px;padding:.85rem 1.4rem;border-radius:8px;border:2px solid transparent;
+  text-decoration:none;cursor:pointer;transition:transform .15s ease, box-shadow .2s ease, background .2s ease}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover);color:#fff;transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(122,46,54,.25)}
+.btn-secondary{background:transparent;color:var(--accent-ink);border-color:var(--accent)}
+.btn-secondary:hover{background:rgba(122,46,54,.06);color:var(--accent-hover);transform:translateY(-2px)}
+@media (prefers-reduced-motion: reduce){.btn:hover{transform:none}}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(247,244,239,.9);
+  backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;
+  padding-block:.75rem;gap:1rem}
+.brand{font-family:var(--display);font-weight:560;font-size:1.15rem;color:var(--ink);
+  text-decoration:none;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:1.25rem}
+.nav a{color:var(--ink);text-decoration:none;font-size:.95rem}
+.nav a.cta{color:#fff;background:var(--accent);padding:.55rem 1rem;border-radius:8px;font-weight:600}
+.nav a.cta:hover{background:var(--accent-hover)}
+.nav-links{display:none;gap:1.25rem}
+@media (min-width:880px){.nav-links{display:flex}}
+
+/* hero */
+.hero{position:relative;min-height:min(80vh,720px);display:flex;align-items:flex-end;
+  color:var(--ink);overflow:hidden;
+  /* Fallback background behind the poster/video while they load. */
+  background:linear-gradient(135deg,#2b3a3a 0%,#41524f 45%,#6a5550 100%)}
+@media (min-width:1024px){.hero{min-height:88vh}}
+.hero-media,.hero-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-poster{z-index:0}.hero-media{z-index:1}
+.hero .wrap{position:relative;z-index:3;padding-block:clamp(2.5rem,6vw,5rem)}
+/* Text sits on a frosted paper panel — keeps the photo bright, no full-image scrim. */
+.hero-inner{max-width:36rem;background:rgba(247,244,239,.80);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.45);border-radius:16px;
+  padding:clamp(1.25rem,2.4vw,1.75rem);box-shadow:0 18px 50px rgba(20,18,17,.20)}
+.hero .eyebrow{color:var(--accent-ink);margin-bottom:.35rem}
+.hero h1{color:var(--ink);font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.04;margin-bottom:.3em}
+.hero .subhead{font-size:clamp(1rem,1.4vw,1.2rem);max-width:30em;margin-bottom:1.15rem;color:#3a3733}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1.1rem}
+.trust-strip{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);
+  padding-top:.85rem;max-width:40em}
+
+/* generic section intro */
+.section-head{max-width:40rem;margin-bottom:2.5rem}
+
+/* service cards */
+.cards{display:grid;grid-template-columns:1fr;gap:1.25rem}
+@media (min-width:680px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(28,26,25,.08)}
+@media (prefers-reduced-motion: reduce){.card:hover{transform:none}}
+.card-media{aspect-ratio:4/3;overflow:hidden;
+  background:linear-gradient(135deg,#7a2e36 0%,#9a4a44 100%)}
+.card-media img{width:100%;height:100%;object-fit:cover;display:block}
+.card-body{padding:1.25rem 1.25rem 1.5rem}
+.card-body h3{margin-bottom:.4rem}
+.card-body p{font-size:.975rem;margin:0}
+.card--funeral{border-color:var(--line)}
+.card--funeral .card-media{background:linear-gradient(135deg,#3b3a38 0%,#5c5852 100%)}
+.card--funeral .card-body{font-size:.95rem}
+.fast-path{display:inline-block;margin-top:.75rem;font-weight:600}
+
+/* media / video feature */
+.video-feature{background:#1C1A19;border-radius:14px;aspect-ratio:16/9;overflow:hidden;
+  border:1px solid var(--line)}
+.video-feature video{width:100%;height:100%;object-fit:cover;display:block;background:#1C1A19}
+.caption{font-size:.875rem;color:var(--muted);margin-top:.75rem}
+
+.about-grid{display:grid;gap:1.75rem;align-items:start;grid-template-columns:1fr}
+@media (min-width:760px){.about-grid{grid-template-columns:300px 1fr}}
+
+/* repertoire */
+.rep-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+@media (min-width:680px){.rep-grid{grid-template-columns:repeat(2,1fr)}}
+.rep-grid h3{font-size:1.05rem;font-family:var(--body);font-weight:600;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--accent-ink);margin-bottom:.4rem}
+.rep-grid ul{margin:0;padding-left:1.1rem}
+.flag{font-size:.85rem;color:var(--muted);font-style:italic}
+
+/* steps */
+.steps{display:grid;grid-template-columns:1fr;gap:1.25rem;counter-reset:step}
+@media (min-width:680px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{position:relative;padding-top:2.75rem}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:0;left:0;
+  width:2rem;height:2rem;border-radius:50%;background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:600;font-family:var(--display)}
+.step h3{font-size:1.05rem}
+.reassure{margin-top:2rem;padding:1.25rem 1.5rem;background:#fff;border:1px solid var(--line);
+  border-radius:12px;max-width:46em}
+
+/* pricing */
+.price-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+@media (min-width:680px){.price-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.price-grid{grid-template-columns:repeat(4,1fr)}}
+.price{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.4rem}
+.price .amt{font-family:var(--display);font-size:1.9rem;color:var(--accent);
+  font-variant-numeric:tabular-nums}
+.price h3{font-size:1.05rem;margin-bottom:.5rem}
+.price p{font-size:.925rem;margin:0;color:var(--ink)}
+.price--funeral{background:#f3f0ea}
+.fineprint{font-size:.875rem;color:var(--muted);margin-top:1.25rem;max-width:48em}
+.pos-line{font-family:var(--display);font-size:1.25rem;color:var(--ink);
+  max-width:32em;margin-top:1.5rem}
+
+/* reviews zero-state */
+.reviews{background:#fff;border:1px solid var(--line);border-radius:14px;padding:2rem;
+  max-width:46em}
+
+/* service area / map */
+.map-wrap{margin-top:1.5rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.map-wrap iframe{display:block;width:100%;height:380px;border:0}
+
+/* FAQ */
+.faq details{border-bottom:1px solid var(--line);padding:1rem 0}
+.faq summary{font-family:var(--display);font-size:1.15rem;cursor:pointer;
+  list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-size:1.4rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq .ans{padding-top:.75rem;max-width:44em}
+.faq .ans p{margin:0}
+
+/* form */
+.form-section{background:#f3f0ea}
+.form-grid{display:grid;grid-template-columns:1fr;gap:1rem;max-width:42rem}
+@media (min-width:680px){.form-grid{grid-template-columns:1fr 1fr}}
+.field{display:flex;flex-direction:column;gap:.35rem}
+.field--full{grid-column:1/-1}
+label{font-weight:600;font-size:.95rem}
+input,select,textarea{font-family:var(--body);font-size:1rem;padding:.7rem .8rem;
+  border:1.5px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);min-height:44px}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:3px solid rgba(122,46,54,.25);outline-offset:0}
+textarea{min-height:120px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-status{margin-top:1rem;font-weight:600}
+.form-status.err{color:var(--accent-ink)}
+.funeral-line{margin-top:1.25rem;font-size:.95rem;color:var(--ink)}
+
+/* footer */
+.site-footer{background:var(--ink);color:#e9e4dd;padding-block:2.5rem}
+.site-footer a{color:#f1d9c9}
+.site-footer .wrap{display:grid;gap:.5rem}
+.site-footer .ft-brand{font-family:var(--display);font-size:1.15rem;color:#fff}
+.site-footer small{color:#b9b2a7}
+
+/* sticky mobile CTA */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:.5rem;
+  padding:.6rem;padding-bottom:max(.6rem,env(safe-area-inset-bottom));
+  background:rgba(247,244,239,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+.sticky-cta .btn{flex:1}
+.sticky-cta .btn-call{flex:0 0 auto;min-width:52px}
+@media (min-width:880px){.sticky-cta{display:none}}
+body{padding-bottom:0}
+@media (max-width:879px){body{padding-bottom:72px}}
+
+/* scroll reveal — transform/opacity only, fires once */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">Charlotte Burslem</a>
+    <nav class="nav" aria-label="Primary">
+      <span class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#hear">Hear her play</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </span>
+      <a class="cta" href="#book">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 1. HERO -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <picture>
+      <source type="image/avif" srcset="/assets/img/hero-poster.avif">
+      <source type="image/webp" srcset="/assets/img/hero-poster.webp">
+      <img class="hero-poster" src="/assets/img/hero-poster.jpg" width="1280" height="720" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
+    </picture>
+    <video class="hero-media" muted playsinline loop preload="none" aria-hidden="true">
+      <source src="/assets/img/hero-720.webm" type="video/webm">
+      <source src="/assets/img/hero-720.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+      <div class="hero-inner">
+        <p class="eyebrow">Portland, Oregon · Great Highland Bagpipes</p>
+        <h1 id="hero-h1">Bagpipes that make the moment</h1>
+        <p class="subhead">Live Highland pipes for your wedding, celebration or event — played with real warmth, in full Highland dress.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#book">Request a Quote</a>
+          <a class="btn btn-secondary" href="sms:+19712285704">Call or Text</a>
+        </div>
+        <p class="trust-strip">Competitive Grade 4 piper · Portland Metro Youth Pipe Band · Serving the Portland metro</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SERVICES (SEO H2 leads) -->
+  <section id="services" aria-labelledby="services-h2">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">For the days worth remembering</p>
+        <h2 id="services-h2">A Portland bagpiper for hire — for weddings, celebrations and events</h2>
+        <p class="lead">A piper adds something a playlist can't — presence, ceremony, a little awe. Charlotte plays for:</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-media">
+            <picture>
+              <source type="image/avif" srcset="/assets/img/funeral-640.avif 640w,/assets/img/funeral-960.avif 960w,/assets/img/funeral-1280.avif 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw">
+              <source type="image/webp" srcset="/assets/img/funeral-640.webp 640w,/assets/img/funeral-960.webp 960w,/assets/img/funeral-1280.webp 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw">
+              <img src="/assets/img/funeral-960.jpg" srcset="/assets/img/funeral-640.jpg 640w,/assets/img/funeral-960.jpg 960w,/assets/img/funeral-1280.jpg 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw" width="960" height="720" loading="lazy" decoding="async" alt="Charlotte Burslem playing bagpipes beside a mountain lake">
+            </picture>
+          </div>
+          <div class="card-body">
+            <h3>Weddings</h3>
+            <p>Pipe your guests in, walk down the aisle to something that gives everyone chills, and lead the way to the reception. Charlotte covers the moments that matter — the gathering, the processional, the recessional, and the send-off.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-media">
+            <picture>
+              <source type="image/avif" srcset="/assets/img/party-640.avif 640w,/assets/img/party-960.avif 960w,/assets/img/party-1280.avif 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw">
+              <source type="image/webp" srcset="/assets/img/party-640.webp 640w,/assets/img/party-960.webp 960w,/assets/img/party-1280.webp 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw">
+              <img src="/assets/img/party-960.jpg" srcset="/assets/img/party-640.jpg 640w,/assets/img/party-960.jpg 960w,/assets/img/party-1280.jpg 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw" width="960" height="720" loading="lazy" decoding="async" alt="Bagpiper playing at a lively celebration in Portland, Oregon">
+            </picture>
+          </div>
+          <div class="card-body">
+            <h3>Parties &amp; Celebrations</h3>
+            <p>Birthdays, anniversaries, Hogmanay, a backyard ceilidh — bagpipes turn a good party into one people talk about. Lively, celebratory sets, and she's happy to learn a request.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-media">
+            <picture>
+              <source type="image/avif" srcset="/assets/img/corporate-640.avif 640w,/assets/img/corporate-960.avif 960w,/assets/img/corporate-1280.avif 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw">
+              <source type="image/webp" srcset="/assets/img/corporate-640.webp 640w,/assets/img/corporate-960.webp 960w,/assets/img/corporate-1280.webp 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw">
+              <img src="/assets/img/corporate-960.jpg" srcset="/assets/img/corporate-640.jpg 640w,/assets/img/corporate-960.jpg 960w,/assets/img/corporate-1280.jpg 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw" width="960" height="720" loading="lazy" decoding="async" alt="Charlotte Burslem in full Highland dress at a Portland event">
+            </picture>
+          </div>
+          <div class="card-body">
+            <h3>Graduations &amp; Retirements</h3>
+            <p>Mark the milestone properly. A piper makes a graduation procession or a retirement send-off feel as significant as it actually is.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-media">
+            <picture>
+              <source type="image/avif" srcset="/assets/img/graduation-640.avif 640w,/assets/img/graduation-960.avif 960w,/assets/img/graduation-1280.avif 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw">
+              <source type="image/webp" srcset="/assets/img/graduation-640.webp 640w,/assets/img/graduation-960.webp 960w,/assets/img/graduation-1280.webp 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw">
+              <img src="/assets/img/graduation-960.jpg" srcset="/assets/img/graduation-640.jpg 640w,/assets/img/graduation-960.jpg 960w,/assets/img/graduation-1280.jpg 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw" width="960" height="720" loading="lazy" decoding="async" alt="Pipers in formation leading a ceremonial procession">
+            </picture>
+          </div>
+          <div class="card-body">
+            <h3>Corporate &amp; Community Events</h3>
+            <p>Burns Night, St. Andrew's, store openings, golf tournaments, St. Patrick's Day, civic ceremonies. Professional, on time, in full Highland dress, easy to invoice.</p>
+          </div>
+        </article>
+        <article class="card card--funeral reveal">
+          <div class="card-media">
+            <picture>
+              <source type="image/avif" srcset="/assets/img/wedding-640.avif 640w,/assets/img/wedding-960.avif 960w,/assets/img/wedding-1280.avif 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw">
+              <source type="image/webp" srcset="/assets/img/wedding-640.webp 640w,/assets/img/wedding-960.webp 960w,/assets/img/wedding-1280.webp 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw">
+              <img src="/assets/img/wedding-960.jpg" srcset="/assets/img/wedding-640.jpg 640w,/assets/img/wedding-960.jpg 960w,/assets/img/wedding-1280.jpg 1280w" sizes="(min-width:1024px) 33vw,(min-width:680px) 50vw,100vw" width="960" height="720" loading="lazy" decoding="async" alt="Charlotte Burslem in full Highland dress playing the bagpipes">
+            </picture>
+          </div>
+          <div class="card-body">
+            <h3>Funerals &amp; Memorials</h3>
+            <p>Charlotte also plays funerals, memorials and celebrations of life, including "Amazing Grace." A piper brings a dignity to the day that stays with people.</p>
+            <a class="fast-path" href="tel:+19712285704">Call or text — we'll take care of the arrangements with you</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. HEAR HER PLAY -->
+  <section id="hear" aria-labelledby="hear-h2" style="background:#f3f0ea">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 id="hear-h2">Hear this Portland bagpiper play</h2>
+        <p class="lead">The best way to know if a piper's right for your day is to hear one. So before you decide anything — press play.</p>
+      </div>
+      <div class="reveal">
+        <div class="video-feature">
+          <video controls preload="none" playsinline poster="/assets/img/feature-poster.jpg" width="1280" height="720">
+            <source src="/assets/img/feature-720.webm" type="video/webm">
+            <source src="/assets/img/feature-720.mp4" type="video/mp4">
+            Your browser doesn't support embedded video. <a href="/assets/img/feature-720.mp4">Download the clip</a>.
+          </video>
+        </div>
+        <p class="caption">Massed bands at a Pacific Northwest Highland Games — the world Charlotte trains and competes in. Turn the sound up.</p>
+        <p class="measure" style="margin-top:1rem">Want to hear Charlotte play a specific tune before you book? Just ask — we're glad to send a sample.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ABOUT -->
+  <section id="about" aria-labelledby="about-h2">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">About</p>
+        <h2 id="about-h2">About Charlotte — your Portland bagpiper</h2>
+      </div>
+      <div class="reveal about-grid">
+        <picture>
+          <source type="image/avif" srcset="/assets/img/about-600.avif 600w,/assets/img/about-900.avif 900w,/assets/img/about-1200.avif 1200w" sizes="(min-width:760px) 320px,100vw">
+          <source type="image/webp" srcset="/assets/img/about-600.webp 600w,/assets/img/about-900.webp 900w,/assets/img/about-1200.webp 1200w" sizes="(min-width:760px) 320px,100vw">
+          <img src="/assets/img/about-600.jpg" srcset="/assets/img/about-600.jpg 600w,/assets/img/about-900.jpg 900w,/assets/img/about-1200.jpg 1200w" sizes="(min-width:760px) 320px,100vw" width="600" height="800" loading="lazy" decoding="async" alt="Charlotte Burslem in full Highland dress" style="width:100%;border-radius:12px;display:block">
+        </picture>
+        <div class="measure" style="max-width:42rem">
+        <p>Charlotte plays with the <a href="https://pmpb.net" rel="noopener">Portland Metro Youth Pipe Band</a> — the youth program of the Portland Metro Pipe Band, Oregon's only Grade 2 competitive pipe band, which has competed at the World Pipe Band Championships in Glasgow and shared a stage with The Chieftains. That's the company she trains in.</p>
+        <p>She's a competitive Grade 4 piper, has been playing since 2019, and competes across the Pacific Northwest. It started early: she grew up tagging along to local Highland Games with her Scottish grandmother, and the pipes stuck — it turned into the thing she'd happily do every weekend.</p>
+        <p>Booking a young piper on her way up has its own kind of charm — you get someone who takes the music seriously and the day joyfully, in full Highland dress, on time, and genuinely glad to be there.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. REPERTOIRE -->
+  <section id="repertoire" aria-labelledby="rep-h2" style="background:#f3f0ea">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 id="rep-h2">What she plays</h2>
+        <p class="lead">A range that fits the day — joyful and rousing, or quiet and moving. A few favorites:</p>
+      </div>
+      <div class="rep-grid reveal">
+        <div>
+          <h3>Celebrations &amp; parties</h3>
+          <ul><li>Scotland the Brave</li></ul>
+        </div>
+        <div>
+          <h3>Traditional Scottish &amp; Irish</h3>
+          <ul>
+            <li>Green Hills of Tyrol</li>
+            <li>Battle's O'er</li>
+            <li>Scotland the Brave</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Weddings</h3>
+          <ul><li>Processional &amp; recessional tunes — ask for the moments you want piped</li></ul>
+        </div>
+        <div>
+          <h3>Memorial</h3>
+          <ul><li>Amazing Grace</li></ul>
+        </div>
+      </div>
+      <p class="flag reveal" style="margin-top:1rem">Representative list — fuller repertoire to be added. Don't see what you're after? Charlotte can learn a special request with enough notice — just ask.</p>
+    </div>
+  </section>
+
+  <!-- 6. HOW IT WORKS -->
+  <section id="how" aria-labelledby="how-h2">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 id="how-h2">How booking works</h2>
+      </div>
+      <div class="steps reveal">
+        <div class="step"><h3>Get in touch</h3><p>Tell us your date, location and the kind of event. Use the form, or call/text for anything time-sensitive.</p></div>
+        <div class="step"><h3>We confirm the details</h3><p>We'll talk through timing, tunes and the moments you want piped, and send a simple quote.</p></div>
+        <div class="step"><h3>Reserve the date</h3><p>A 50% deposit holds your date; the balance is due on the day.</p></div>
+        <div class="step"><h3>She plays</h3><p>Charlotte arrives early, in full Highland dress, ready to make it memorable.</p></div>
+      </div>
+      <div class="reassure reveal">
+        <p style="margin:0 0 .75rem"><strong>Booking is parent-managed.</strong> Charlotte is 16, so all booking and communication is handled by her parent — you're arranging everything with a responsible adult, start to finish.</p>
+        <p style="margin:0"><strong>What's included:</strong> Full Highland dress, around 30 minutes of playing for celebrations, and arrival ahead of time so everything's set before your guests are.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. PRICING -->
+  <section id="pricing" aria-labelledby="pricing-h2" style="background:#f3f0ea">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 id="pricing-h2">Bagpiper pricing in Portland</h2>
+        <p class="lead">No mystery quotes. Here's where pricing starts — final cost depends on travel, timing and any extras, and we'll confirm it all up front.</p>
+      </div>
+      <div class="price-grid reveal">
+        <div class="price"><h3>Weddings</h3><p class="amt">from $350</p><p>Gathering, processional, recessional and send-off; around 30 minutes of playing on site.</p></div>
+        <div class="price"><h3>Parties, Graduations &amp; Retirements</h3><p class="amt">from $300</p><p>Lively celebratory sets. Requests welcome.</p></div>
+        <div class="price"><h3>Corporate &amp; Events</h3><p class="amt">from $300</p><p>Professional piping for business and community occasions; easy to invoice.</p></div>
+        <div class="price price--funeral"><h3>Funerals &amp; Memorials</h3><p class="amt">$200</p><p>One service, including "Amazing Grace."</p></div>
+      </div>
+      <p class="pos-line reveal">The real thing — live, competitive Highland piping — at a price that makes saying yes easy.</p>
+      <p class="fineprint reveal">Listed prices are starting points, confirmed in a written quote before you book. Travel beyond 25 miles of Portland and additional time are quoted up front. A 50% deposit reserves your date (non-refundable within 14 days of the event); the balance is due on the day. Full booking terms on the Terms page.</p>
+    </div>
+  </section>
+
+  <!-- 8. REVIEWS (launch zero-state) -->
+  <section id="reviews" aria-labelledby="reviews-h2">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 id="reviews-h2">In good company</h2>
+      </div>
+      <div class="reviews reveal">
+        <p style="margin:0">Charlotte plays with the Portland Metro Youth Pipe Band and competes across the Pacific Northwest. Just booked her? We'd love your review here after the event.</p>
+      </div>
+      <!-- Real testimonials replace the block above: "Quote" — First L., Event type, Month Year.
+           Review/AggregateRating JSON-LD stays OFF until genuine reviews exist (see <head> note). -->
+    </div>
+  </section>
+
+  <!-- 9. SERVICE AREA -->
+  <section id="area" aria-labelledby="area-h2" style="background:#f3f0ea">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 id="area-h2">Bagpiper serving Portland &amp; the surrounding metro</h2>
+      </div>
+      <p class="measure reveal">Charlotte is based in Portland and plays across the metro and surrounding area — including Beaverton, Hillsboro, Gresham, Lake Oswego, Tigard, Milwaukie, Oregon City and Vancouver, WA. Somewhere a little farther out? Ask — she travels for the right event.</p>
+      <div class="map-wrap reveal">
+        <iframe title="Map of the Portland, Oregon metro service area" loading="lazy"
+          src="https://www.google.com/maps?q=Portland,Oregon&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ -->
+  <section id="faq" aria-labelledby="faq-h2">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 id="faq-h2">Questions, answered</h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>How much does it cost to hire a bagpiper in Portland?</summary><div class="ans"><p>Hiring Charlotte starts at $350 for weddings, $300 for parties, graduations, retirements and corporate events, and $200 for funerals. Travel beyond the Portland metro and any extra time are quoted up front, and listed prices are starting points confirmed in a written quote before you book.</p></div></details>
+        <details><summary>What events does a bagpiper play?</summary><div class="ans"><p>Charlotte plays weddings, parties, graduations, retirements, corporate and community events, and funerals and memorials. If it's a moment worth marking, bagpipes fit.</p></div></details>
+        <details><summary>Can a bagpiper play at my wedding?</summary><div class="ans"><p>Yes — weddings are one of Charlotte's favorites. She pipes the guest gathering, the processional, the recessional, and leads everyone to the reception. Tell us the moments you want piped and we'll plan it together.</p></div></details>
+        <details><summary>Does Charlotte play parties, graduations and retirements?</summary><div class="ans"><p>Yes. These are lively, celebratory sets, and she's happy to learn a special request with enough notice.</p></div></details>
+        <details><summary>What areas does Charlotte serve?</summary><div class="ans"><p>Charlotte serves Portland and the surrounding metro, including Beaverton, Hillsboro, Gresham, Lake Oswego, Tigard, Milwaukie, Oregon City and Vancouver, WA. She travels a little farther for the right event — just ask.</p></div></details>
+        <details><summary>What's included when you hire Charlotte?</summary><div class="ans"><p>Charlotte arrives early in full Highland dress and plays for around 30 minutes for celebrations. The exact tunes and timing are confirmed with you beforehand.</p></div></details>
+        <details><summary>How do I book a bagpiper, and who do I talk to?</summary><div class="ans"><p>Send the booking form or call or text. Charlotte is 16, so her parent handles all booking and communication — you arrange everything with a responsible adult throughout. A 50% deposit reserves your date.</p></div></details>
+        <details><summary>How far in advance should I book a bagpiper?</summary><div class="ans"><p>For weddings and parties, a few weeks to a few months gives the best chance at your date. Shorter notice is often possible — just ask.</p></div></details>
+        <details><summary>Can a bagpiper play indoors or with other musicians?</summary><div class="ans"><p>Yes to both. Bagpipes are loud and carry beautifully outdoors, and work indoors in the right space — we'll advise on the venue, and Charlotte has played alongside other musicians.</p></div></details>
+        <details><summary>What experience does Charlotte have?</summary><div class="ans"><p>Charlotte is a competitive Grade 4 bagpiper with the Portland Metro Youth Pipe Band — the youth program of Oregon's only Grade 2 competitive band. She's played since 2019 and competes across the Pacific Northwest.</p></div></details>
+        <details><summary>Does Charlotte play funerals and memorials?</summary><div class="ans"><p>Yes, with care and respect, including "Amazing Grace." For a funeral, the simplest thing is to <a href="tel:+19712285704">call or text</a> and we'll handle the arrangements with you.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. BOOKING FORM -->
+  <section id="book" class="form-section" aria-labelledby="book-h2">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 id="book-h2">Request a quote</h2>
+        <p class="lead">Tell us a little about your event and we'll come back with availability and a quote, usually within 24 hours.</p>
+      </div>
+      <!--
+        FORM PIPELINE — static pages can't send mail. Before launch, point action= at a
+        Cloudflare Pages Function (Resend/Postmark) or a form service (Formspree/Basin),
+        and add the Cloudflare Turnstile widget (Section 18). The JS below shows the
+        success state client-side; the honeypot is a first-line spam filter.
+      -->
+      <form class="form-grid reveal" id="bookForm" action="#" method="post" novalidate>
+        <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="etype">Event type</label>
+          <select id="etype" name="event_type" required>
+            <option value="" selected disabled>Choose one</option>
+            <option>Wedding</option><option>Party</option><option>Graduation</option>
+            <option>Retirement</option><option>Corporate</option><option>Funeral</option><option>Other</option>
+          </select>
+        </div>
+        <div class="field"><label for="edate">Event date</label><input id="edate" name="event_date" type="date"></div>
+        <div class="field"><label for="loc">Location / venue</label><input id="loc" name="location" type="text"></div>
+        <div class="field field--full"><label for="msg">Anything else we should know?</label><textarea id="msg" name="message"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
+        <!-- <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITEKEY"></div> -->
+        <div class="field--full">
+          <button class="btn btn-primary" type="submit">Send Request</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+      <p class="funeral-line">Arranging a funeral? <a href="tel:+19712285704">Call or text (971) 228-5704</a> — we respond quickly and will take care of it.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- 12. FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="ft-brand">Charlotte Burslem · Portland Bagpiper for Hire</p>
+    <p style="margin:0">Serving Portland, OR &amp; surrounding metro · <a href="tel:+19712285704">(971) 228-5704</a> · <a href="mailto:joel@burslem.ca">joel@burslem.ca</a></p>
+    <p style="margin:0">Bookings managed by parent/guardian.</p>
+    <p style="margin:0"><a href="/terms">Booking Terms</a> · <a href="/privacy">Privacy Policy</a></p>
+    <small>© 2026 Charlotte Burslem — Portland Bagpiper. Registered business name to be confirmed.</small>
+  </div>
+</footer>
+
+<!-- sticky mobile CTA -->
+<div class="sticky-cta" aria-label="Quick contact">
+  <a class="btn btn-primary" href="#book">Request a Quote</a>
+  <a class="btn btn-secondary btn-call" href="tel:+19712285704" aria-label="Call or text Charlotte's booking line">Call</a>
+</div>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://charlotteburslem.com/#business",
+      "name": "Charlotte Burslem — Bagpiper",
+      "description": "Charlotte Burslem is a competitive young bagpiper based in Portland, Oregon, available to hire for weddings, parties, graduations, retirements, corporate and community events — and funerals and memorials. She plays the Great Highland bagpipes in full Highland dress and trains with the Portland Metro Youth Pipe Band.",
+      "url": "https://charlotteburslem.com/",
+      "telephone": "+1-971-228-5704",
+      "email": "joel@burslem.ca",
+      "image": "https://charlotteburslem.com/assets/og-charlotte-burslem.jpg",
+      "priceRange": "$200-$350",
+      "areaServed": [
+        {"@type":"City","name":"Portland"},
+        {"@type":"City","name":"Beaverton"},
+        {"@type":"City","name":"Hillsboro"},
+        {"@type":"City","name":"Gresham"},
+        {"@type":"City","name":"Lake Oswego"},
+        {"@type":"City","name":"Tigard"},
+        {"@type":"City","name":"Milwaukie"},
+        {"@type":"City","name":"Oregon City"},
+        {"@type":"City","name":"Vancouver, WA"}
+      ],
+      "address": {"@type":"PostalAddress","addressLocality":"Portland","addressRegion":"OR","addressCountry":"US"},
+      "founder": {"@id":"https://charlotteburslem.com/#charlotte"},
+      "sameAs": ["https://pmpb.net"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://charlotteburslem.com/#charlotte",
+      "name": "Charlotte Burslem",
+      "jobTitle": "Bagpiper",
+      "memberOf": {"@type":"MusicGroup","name":"Portland Metro Youth Pipe Band","url":"https://pmpb.net"}
+    },
+    {
+      "@type": "Service",
+      "name": "Wedding Bagpiper",
+      "serviceType": "Wedding bagpiper for hire",
+      "provider": {"@id":"https://charlotteburslem.com/#business"},
+      "areaServed": {"@type":"City","name":"Portland"},
+      "offers": {"@type":"Offer","price":"350","priceCurrency":"USD","description":"From $350 — gathering, processional, recessional and send-off."}
+    },
+    {
+      "@type": "Service",
+      "name": "Corporate Event Bagpiper",
+      "serviceType": "Corporate and community event bagpiper for hire",
+      "provider": {"@id":"https://charlotteburslem.com/#business"},
+      "areaServed": {"@type":"City","name":"Portland"},
+      "offers": {"@type":"Offer","price":"300","priceCurrency":"USD","description":"From $300 — Burns Night, St. Andrew's, openings, civic events."}
+    },
+    {
+      "@type": "Service",
+      "name": "Funeral & Memorial Bagpiper",
+      "serviceType": "Funeral and memorial bagpiper for hire",
+      "provider": {"@id":"https://charlotteburslem.com/#business"},
+      "areaServed": {"@type":"City","name":"Portland"},
+      "offers": {"@type":"Offer","price":"200","priceCurrency":"USD","description":"$200 flat — one service, including Amazing Grace."}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"How much does it cost to hire a bagpiper in Portland?","acceptedAnswer":{"@type":"Answer","text":"Hiring Charlotte starts at $350 for weddings, $300 for parties, graduations, retirements and corporate events, and $200 for funerals. Travel beyond the Portland metro and any extra time are quoted up front, and listed prices are starting points confirmed in a written quote before you book."}},
+        {"@type":"Question","name":"What events does a bagpiper play?","acceptedAnswer":{"@type":"Answer","text":"Charlotte plays weddings, parties, graduations, retirements, corporate and community events, and funerals and memorials. If it's a moment worth marking, bagpipes fit."}},
+        {"@type":"Question","name":"Can a bagpiper play at my wedding?","acceptedAnswer":{"@type":"Answer","text":"Yes — weddings are one of Charlotte's favorites. She pipes the guest gathering, the processional, the recessional, and leads everyone to the reception."}},
+        {"@type":"Question","name":"Does Charlotte play parties, graduations and retirements?","acceptedAnswer":{"@type":"Answer","text":"Yes. These are lively, celebratory sets, and she's happy to learn a special request with enough notice."}},
+        {"@type":"Question","name":"What areas does Charlotte serve?","acceptedAnswer":{"@type":"Answer","text":"Charlotte serves Portland and the surrounding metro, including Beaverton, Hillsboro, Gresham, Lake Oswego, Tigard, Milwaukie, Oregon City and Vancouver, WA. She travels a little farther for the right event."}},
+        {"@type":"Question","name":"What's included when you hire Charlotte?","acceptedAnswer":{"@type":"Answer","text":"Charlotte arrives early in full Highland dress and plays for around 30 minutes for celebrations. The exact tunes and timing are confirmed with you beforehand."}},
+        {"@type":"Question","name":"How do I book a bagpiper, and who do I talk to?","acceptedAnswer":{"@type":"Answer","text":"Send the booking form or call or text. Charlotte is 16, so her parent handles all booking and communication. A 50% deposit reserves your date."}},
+        {"@type":"Question","name":"How far in advance should I book a bagpiper?","acceptedAnswer":{"@type":"Answer","text":"For weddings and parties, a few weeks to a few months gives the best chance at your date. Shorter notice is often possible — just ask."}},
+        {"@type":"Question","name":"Can a bagpiper play indoors or with other musicians?","acceptedAnswer":{"@type":"Answer","text":"Yes to both. Bagpipes are loud and carry beautifully outdoors, and work indoors in the right space, and Charlotte has played alongside other musicians."}},
+        {"@type":"Question","name":"What experience does Charlotte have?","acceptedAnswer":{"@type":"Answer","text":"Charlotte is a competitive Grade 4 bagpiper with the Portland Metro Youth Pipe Band — the youth program of Oregon's only Grade 2 competitive band. She's played since 2019 and competes across the Pacific Northwest."}},
+        {"@type":"Question","name":"Does Charlotte play funerals and memorials?","acceptedAnswer":{"@type":"Answer","text":"Yes, with care and respect, including Amazing Grace. For a funeral, the simplest thing is to call or text and we'll handle the arrangements with you."}}
+      ]
+    }
+  ]
+}
+</script>
+<!--
+  REVIEW / AGGREGATERATING JSON-LD — built but intentionally NOT emitted (PRD Sections 6/8/9).
+  Empty rating markup is a Google rich-results violation. Switch this on with the first genuine review:
+  {
+    "@type": "Review",
+    "itemReviewed": {"@id":"https://charlotteburslem.com/#business"},
+    "author": {"@type":"Person","name":"First L."},
+    "reviewRating": {"@type":"Rating","ratingValue":"5","bestRating":"5"},
+    "reviewBody": "..."
+  }
+-->
+
+<script>
+// Scroll reveal — IntersectionObserver, transform/opacity only, fires once.
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {rootMargin:'0px 0px -10% 0px', threshold:0.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+// Hero video: hydrate after first paint, only when allowed and in view (PRD §14).
+(function(){
+  var v = document.querySelector('.hero-media');
+  if (!v) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var conn = navigator.connection || {};
+  if (reduce || conn.saveData || /2g/.test(conn.effectiveType || '')) return;
+  var start = function(){
+    if (v.dataset.lit) return; v.dataset.lit = '1';
+    v.preload = 'auto'; v.load();
+    var p = v.play(); if (p && p.catch) p.catch(function(){});
+  };
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){ if (e.isIntersecting){ start(); io.disconnect(); } });
+    }, {threshold:0.1});
+    io.observe(v);
+  } else { start(); }
+})();
+
+// Hide sticky CTA while the user is typing in the form (PRD mobile UX).
+(function(){
+  var bar = document.querySelector('.sticky-cta');
+  if (!bar) return;
+  document.querySelectorAll('#bookForm input, #bookForm select, #bookForm textarea').forEach(function(f){
+    f.addEventListener('focus', function(){ bar.style.display='none'; });
+    f.addEventListener('blur', function(){ bar.style.display=''; });
+  });
+})();
+
+// Form handling (client-side success state; replace with real pipeline before launch).
+(function(){
+  var form = document.getElementById('bookForm');
+  var status = document.getElementById('formStatus');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    status.classList.remove('err');
+    // honeypot
+    if (form.querySelector('#company').value){ return; }
+    if (!form.checkValidity()){
+      status.textContent = 'Please check the highlighted fields and try again — or just call or text (971) 228-5704.';
+      status.classList.add('err');
+      form.reportValidity();
+      return;
+    }
+    // TODO: POST to Cloudflare Pages Function / Formspree here.
+    status.textContent = "Thanks — we've got your request and will be in touch within 24 hours. For anything urgent, call or text (971) 228-5704.";
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>

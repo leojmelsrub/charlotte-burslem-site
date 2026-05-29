@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Source masters / scratch — never deploy these (~220MB)
+assets/_prev/
+assets/_originals/
+
+# Editor / OS noise
+*.swp
+Thumbs.db
