@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Commit and push, triggering a Cloudflare Pages deploy.
+# Usage:  ./deploy "your commit message"
+#         ./deploy            (uses a timestamped default message)
+set -euo pipefail
+cd "$(dirname "$0")"
+
+msg="${*:-}"
+if [ -z "$msg" ]; then
+  msg="Update site — $(date '+%Y-%m-%d %H:%M')"
+fi
+
+if git diff --quiet && git diff --cached --quiet && [ -z "$(git status --porcelain)" ]; then
+  echo "Nothing to commit — working tree clean."
+  exit 0
+fi
+
+git add -A
+git commit -m "$msg"
+git push
+echo "Pushed. Cloudflare Pages will rebuild in a moment."
