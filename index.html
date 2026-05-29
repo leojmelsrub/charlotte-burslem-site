@@ -117,6 +117,8 @@ section{padding-block:clamp(3rem,7vw,6rem)}
 .nav a.cta:hover{background:var(--accent-hover)}
 .nav-links{display:none;gap:1.25rem}
 @media (min-width:880px){.nav-links{display:flex}}
+/* The sticky bottom CTA covers this on mobile — hide the header CTA there to avoid duplication. */
+@media (max-width:879px){.nav a.cta{display:none}}
 
 /* hero */
 .hero{position:relative;min-height:min(80vh,720px);display:flex;align-items:flex-end;
@@ -141,6 +143,13 @@ section{padding-block:clamp(3rem,7vw,6rem)}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:.9rem}
 .trust-strip{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);
   padding-top:.7rem;max-width:46em}
+/* Mobile hero: trim the panel so the background video shows. The sticky bottom bar
+   already carries the CTA, and the subhead repeats the services section below. */
+@media (max-width:879px){
+  .hero .subhead{display:none}
+  .hero-ctas{display:none}
+  .trust-strip{border-top:0;padding-top:0;margin-top:.25rem}
+}
 
 /* generic section intro */
 .section-head{max-width:40rem;margin-bottom:2.5rem}
