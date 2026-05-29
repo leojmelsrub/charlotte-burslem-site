@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- /booking is intentionally omitted: it is noindex (PRD Section 4). Homepage is the only ranking target. -->
+<!-- Only the homepage is indexable. /booking, /terms, /privacy, /404 are noindex by design,
+     so they are deliberately excluded. Update <lastmod> when homepage content changes. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://charlotteburslem.com/</loc>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

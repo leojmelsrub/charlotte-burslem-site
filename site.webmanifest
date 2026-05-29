@@ -1,0 +1,13 @@
+{
+  "name": "Charlotte Burslem — Portland Bagpiper",
+  "short_name": "Charlotte Burslem",
+  "description": "Charlotte Burslem, Portland bagpiper for weddings, celebrations and events.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#F7F4EF",
+  "background_color": "#F7F4EF",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/assets/img/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

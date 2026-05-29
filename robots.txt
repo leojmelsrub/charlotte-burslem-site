@@ -1,3 +1,7 @@
+# Crawl everything. The utility pages (/booking, /terms, /privacy) are kept crawlable
+# on purpose so search engines can read their noindex meta tag. Disallowing them here
+# would hide that tag and risk them being indexed without it. AI crawlers (GPTBot,
+# ClaudeBot, PerplexityBot, etc.) are allowed for answer-engine visibility.
 User-agent: *
 Allow: /
 
