@@ -576,7 +576,7 @@ body{padding-bottom:0}
         </div>
         <div class="field"><label for="edate">Event date</label><input id="edate" name="event_date" type="date"></div>
         <div class="field"><label for="loc">Location / venue</label><input id="loc" name="location" type="text"></div>
-        <div class="field field--full"><label for="msg">Anything else we should know?</label><textarea id="msg" name="message"></textarea></div>
+        <div class="field field--full"><label for="msg">Anything else we should know?</label><textarea id="msg" name="message" placeholder="Tell us the event date and location, the moments you'd like piped (processional, send-off…), and any tunes you have in mind."></textarea></div>
         <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
         <div class="cf-turnstile field--full" data-sitekey="YOUR_TURNSTILE_SITEKEY"></div>
         <div class="field--full">
@@ -746,6 +746,24 @@ body{padding-bottom:0}
   });
 })();
 
+// Field formatting — live US phone mask + email normalize on blur.
+(function(){
+  var phone = document.getElementById('phone');
+  if (phone){
+    phone.addEventListener('input', function(){
+      var d = phone.value.replace(/\D/g,'').slice(0,10), out = '';
+      if (d.length > 6) out = '(' + d.slice(0,3) + ') ' + d.slice(3,6) + '-' + d.slice(6);
+      else if (d.length > 3) out = '(' + d.slice(0,3) + ') ' + d.slice(3);
+      else if (d.length > 0) out = '(' + d;
+      phone.value = out;
+    });
+  }
+  var email = document.getElementById('email');
+  if (email){
+    email.addEventListener('blur', function(){ email.value = email.value.trim().toLowerCase(); });
+  }
+})();
+
 // Form handling — POST to /api/book (Pages Function), with graceful messaging.
 (function(){
   var form = document.getElementById('bookForm');
@@ -771,8 +789,15 @@ body{padding-bottom:0}
     }).then(function(r){ return r.json().catch(function(){ return {ok:r.ok}; }); })
       .then(function(res){
         if (res && res.ok){
-          status.textContent = "Thanks — we've got your request and will be in touch within 24 hours. For anything urgent, call or text (971) 228-5704.";
-          form.reset();
+          var done = document.createElement('div');
+          done.className = 'reassure';
+          done.setAttribute('role','status');
+          done.setAttribute('aria-live','polite');
+          done.innerHTML = '<p style="margin:0 0 .5rem"><strong>Thanks — your request is in.</strong></p><p style="margin:0">We\'ll be in touch within 24 hours. For anything urgent, call or text <a href="tel:+19712285704">(971) 228-5704</a>.</p>';
+          form.replaceWith(done);
+          done.setAttribute('tabindex','-1');
+          done.focus();
+          return;
         } else {
           status.textContent = (res && res.error ? res.error + ' ' : '') + 'You can also call or text (971) 228-5704.';
           status.classList.add('err');
